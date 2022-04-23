@@ -1,0 +1,58 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon <%= yield(:navbar_class) %>">
+
+  <% if user_signed_in? %>
+
+    <div class="navbar-left-div">
+      <input type="checkbox" id="chec">
+      <label for="chec">
+        <%= image_tag "https://ca.slack-edge.com/T02NE0241-U02GFM63B8B-3067df17e3fa-512", class: "avatar dropdown-toggle", id: "navbarDropdown" %>
+      </label>
+      <nav>
+        <ul>
+          <li>
+            <%= link_to dashboard_path, class: "navbar-brand" do %>
+              <i class="fas fa-bookmark"></i> Saved
+            <% end %>
+          </li>
+          <li>
+            <%= link_to favourite_path, class: "navbar-brand" do %>
+              <i class="fas fa-heart"></i> Favourites
+            <% end %>
+          </li>
+          <li>
+            <%= link_to completed_path, class: "navbar-brand" do %>
+              <i class="fas fa-check-square"></i> Completed
+            <% end %>
+          </li>
+          <li style="margin-top: 470px; border-bottom: 0px; border-top: 1px solid #F4F4F4;">
+            <%= link_to destroy_user_session_path, method: :delete, class: "navbar-brand" do %>
+              <i class="fas fa-sign-out-alt"></i> Log Out
+            <% end %>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div style="width: 100px">
+      <%= link_to recipes_path, class: "navbar-brand" do %>
+        <%= image_tag "chefme_trial_logo2_transparent_no_slogan.png" %>
+      <% end %>
+    </div>
+
+  <% else %>
+
+    <div>
+    </div>
+
+    <div style="width: 100px">
+      <%= link_to root_path, class: "navbar-brand" do %>
+        <%= image_tag "chefme_trial_logo2_transparent_no_slogan.png" %>
+      <% end %>
+    </div>
+
+    <div>
+    </div>
+
+  <% end %>
+
+</div>

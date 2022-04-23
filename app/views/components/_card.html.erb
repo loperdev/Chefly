@@ -1,0 +1,60 @@
+<div class="recipe-card">
+  <div class="card-img">
+    <div class='icons' data-controller='card-icons'>
+      <% if saved_recipe %>
+        <i class="fas fa-bookmark" data-action='click->card-icons#bookmark' data-saved='<%=saved_recipe.id%>' data-recipe='<%=recipe.id%>'></i>
+      <% else %>
+        <i class="far fa-bookmark" data-action='click->card-icons#bookmark' data-recipe='<%=recipe.id%>' data-saved='0'></i>
+      <% end %>
+      <%= link_to recipe_saved_recipes_path(recipe, attribute: :favourite), method: :post, remote: true, class: 'card-icons' do %>
+        <% if saved_recipe&.favourite %>
+          <i class="fas fa-heart" data-action='click->card-icons#favourite'></i>
+        <% else %>
+          <i class="far fa-heart" data-action='click->card-icons#favourite'></i>
+        <% end %>
+      <% end %>
+      <%= link_to recipe_saved_recipes_path(recipe, attribute: :completed), method: :post, remote: true, class: 'card-icons' do %>
+        <% if saved_recipe&.completed %>
+          <i class="fas fa-check-square" data-action='click->card-icons#complete'></i>
+        <% else %>
+          <i class="far fa-check-square" data-action='click->card-icons#complete'></i>
+        <% end %>
+      <% end %>
+
+    </div>
+    <div class='img-container'>
+      <%= link_to recipe_path(recipe) do %>
+        <img src="<%= recipe.image_url %>"/>
+      <% end %>
+    </div>
+  </div>
+  <div class="card-content">
+    <h2 class="recipe-title"><%= recipe.name %></h2>
+
+
+    <hr>
+    <div class="recipe-details">
+      <div class="recipe-details-item time">
+        <div class="values">
+          <ion-icon name="time-outline"></ion-icon>
+          <span class="value"><%= recipe.cook_time %></span>
+        </div>
+        <div class="title">Minutes</div>
+      </div>
+      <div class="recipe-details-item ingredients">
+        <div class="values">
+          <ion-icon name="book-outline"></ion-icon>
+          <span class="value"><%= recipe.recipe_ingredients.count %></span>
+        </div>
+        <div class="title">Ingredients</div>
+      </div>
+      <div class="recipe-details-item servings">
+        <div class="values">
+          <ion-icon name="people-outline"></ion-icon>
+          <span class="value"><%= recipe.servings %></span>
+        </div>
+        <div class="title">Servings</div>
+      </div>
+    </div>
+  </div>
+</div>

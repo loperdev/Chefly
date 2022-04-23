@@ -1,0 +1,48 @@
+.footer {
+  background: #F4F4F4;
+  // border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  height: 120px;
+  justify-content: space-around;
+  padding: 16px 24px;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+.footer-links {
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  height: 100%;
+
+  p, ul {
+    color: #aaa;
+    flex: 1 1 100%;
+    margin: 0;
+  }
+
+  ul {
+    display: block;
+    list-style: none;
+    padding: 0;
+    position: static;
+
+    li {
+      display: inline;
+    }
+  }
+
+  a {
+    color: #555;
+  }
+}
+
+.footer-img {
+    // border: 1px black solid;
+
+  img {
+    width: 80px;
+  }
+}

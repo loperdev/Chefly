@@ -1,0 +1,82 @@
+.navbar-lewagon {
+  justify-content: center;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 1000;
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 100px;
+  border-radius: 5px;
+  margin-right: 0;
+}
+
+.navbar-home {
+  position: absolute;
+  justify-content: space-evenly;
+  width: 100%;
+  background: transparent;
+  box-shadow: none;
+  .navbar-wagon-link {
+    color: white;
+    font-weight: bold;
+  }
+}
+
+.navbar-left-div {
+  .a {
+    color: $light-gray;
+    text-decoration: none;
+    background-color: transparent;
+  }
+  a:visited {
+  color: $light-gray;
+  }
+  a:hover {
+  color: $green;
+  }
+  a:active {
+  color: $light-gray;
+  }
+  a:link {
+  color: $light-gray;
+  }
+  nav{
+    background-color: rgba(1,105,110, .9);
+    top: 85px;
+    width: 175px;
+    left: -175px;
+    height: 1000px;
+    position: absolute;
+    transition: all .5s;
+  }
+  ul {
+    list-style: none;
+    position: absolute;
+    top: 5px;
+    width: 100%;
+    left: -20px
+  }
+  li {
+    border-bottom: 1px solid #F4F4F4;
+  }
+  input[type="checkbox"] {
+    display: none;
+  }
+  input[type="checkbox"]:checked ~ nav {
+    transform: translateX(175px);
+  }
+  label {
+    left: 60px;
+    position: absolute;
+    z-index: 1;
+    cursor: pointer;
+    top: 30px;
+  }
+}
